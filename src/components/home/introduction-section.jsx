@@ -1,17 +1,17 @@
 import React from "react";
-import { ArrowRight, CheckCircle, CornerDownRight, Play, Users } from "lucide-react";
+import {  CheckCircle, CornerDownRight,  Users } from "lucide-react";
 import { SectionContainer } from "../section-container";
 
 export default function PowerWashingSection() {
   return (
-    <section className="bg-hy-bg-primary pt-24 pb-20 ">
+    <section className="bg-hy-bg-primary pt-24 pb-20">
       <SectionContainer>
     
           <div className="grid lg:grid-cols-2 gap-8 lg:gap-12 items-center">
             {/* Left side - Images */}
             <div className="relative">
               {/* Main image */}
-              <div className="relative rounded-lg overflow-hidden shadow-lg">
+              <div className="relative rounded-none overflow-hidden border-2 border-hy-accent-primary/50 shadow-lg">
                 <img
                   src="https://images.unsplash.com/photo-1558618666-fcd25c85cd64?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80"
                   alt="Pressure washing deck"
@@ -30,7 +30,7 @@ export default function PowerWashingSection() {
               </div>
 
               {/* Secondary image */}
-              <div className="absolute -bottom-8 -right-4 md:-right-8 w-32 h-32 md:w-48 md:h-48 rounded-lg overflow-hidden shadow-lg border-4 border-white">
+              <div className="absolute -bottom-8 -right-4 md:-right-8 w-32 h-32 md:w-48 md:h-48 rounded-none  overflow-hidden shadow-lg border-2 border-hy-accent-primary/50">
                 <img
                   src="https://images.unsplash.com/photo-1581578731548-c64695cc6952?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&q=80"
                   alt="Clean fence after pressure washing"
@@ -97,7 +97,7 @@ export default function PowerWashingSection() {
                       8800
                     </div>
                     <div className="text-sm text-hy-text-secondary">
-                      Successfully
+                      Successfull
                       <br />
                       Project
                     </div>
