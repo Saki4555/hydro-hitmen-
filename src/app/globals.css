@@ -61,7 +61,7 @@
 
   /* borders */
   --color-hy-border: var(--color-gray-200);
-  --color-hy-border-accent: var(--color-cyan-300); /* or teal-500 */
+  --color-hy-border-accent: var(--color-cyan-200); /* or teal-500 */
 
   /* Input fields */
   --color-hy-input-bg: var(--color-white);

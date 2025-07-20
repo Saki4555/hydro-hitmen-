@@ -85,7 +85,7 @@ const TestimonialCard = ({ rating, testimonial, name, title }) => {
     .join('.');
 
   return (
-    <div className="bg-hy-bg-secondary border mb-4 border-hy-border-accent/50 rounded-none backdrop-blur-3xl shadow-md shadow-hy-accent-secondary/40 p-6 max-w-xs flex flex-col justify-between space-y-6">
+    <div className="bg-hy-bg-secondary border mb-4 border-hy-border-accent/40 rounded-none backdrop-blur-3xl shadow-md shadow-hy-accent-secondary/40 p-6 max-w-xs flex flex-col justify-between space-y-6">
       {/* Quote Icon */}
       <IconQuote className="w-6 h-6 opacity-70" />
 

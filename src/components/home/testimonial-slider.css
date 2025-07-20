@@ -6,13 +6,13 @@
   .testimonial-slider .swiper-pagination-bullet {
     width: 10px;
     height: 10px;
-    background-color: var(--color-bg-accent);
+    background-color: var(--color-hy-accent-primary);
     opacity: 0.5;
     transition: all 0.3s ease;
   }
   
   .testimonial-slider .swiper-pagination-bullet-active {
-    background-color: var(--color-bg-accent);
+    background-color: var(--color-hy-accent-primary);
     opacity: 1;
     width: 12px;
     height: 12px;

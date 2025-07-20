@@ -1,3 +1,5 @@
+import Faq3 from "@/components/home/faq-section";
+import MobileTestimonial from "@/components/home/mobile-testimonial";
 import { ServiceWithImageComparisonCard } from "@/components/home/service-with-image-comparison";
 import Testimonial from "@/components/home/testimonial";
 import { SectionContainer } from "@/components/section-container";
@@ -36,6 +38,8 @@ const Home = () => {
      
     </div>
      <Testimonial />
+     <MobileTestimonial />
+     <Faq3 />
     </>
   );
 };
