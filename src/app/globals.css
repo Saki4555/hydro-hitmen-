@@ -47,16 +47,17 @@
   /*! --------------- CUSTOM ---------------- */
 
   /* backgrounds */
-  --color-bg-hy-primary: var(--color-white);
-  --color-bg-hy-secondary: var(--color-gray-50);
+  --color-hy-bg-primary: var(--color-white);
+  --color-hy-bg-secondary: var(--color-gray-50);
 
   /* texts */
   --color-hy-text-primary: var(--color-slate-950);
-  --color-hy-text-secondary: var(--color-slate-800);
+  --color-hy-text-secondary: var(--color-slate-700);
+  
 
   /* accents */
-  --color-hy-accent-primary: var(--color-cyan-500);
-  --color-hy-accent-secondary: var(--color-teal-500);
+  --color-hy-accent-primary: var(--color-cyan-600);
+  --color-hy-accent-secondary: var(--color-teal-600);
 
   /* borders */
   --color-hy-border: var(--color-gray-200);

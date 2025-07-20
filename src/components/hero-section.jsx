@@ -114,7 +114,7 @@ export default function HeroSection() {
                 Premium Service
               </span>
             </div>
-            <h1 className="text-4xl leading-[0.5] md:text-5xl lg:text-7xl font-bold text-white mb-6">
+            <h1 className="text-4xl  md:text-5xl lg:text-7xl font-bold text-white mb-6">
               Exterior Cleaning
               <span className="block leading-relaxed text-transparent bg-clip-text bg-gradient-to-r from-cyan-400 to-teal-400">
                 Reimagined
@@ -128,7 +128,7 @@ export default function HeroSection() {
 
           {/* Right: Features */}
           <motion.div
-            className="grid grid-cols-1 sm:grid-cols-2 p-0 md:p-8 gap-1 w-full md:w-2/5"
+            className="grid grid-cols-1 lg:grid-cols-2 p-0 md:p-8 gap-1 w-full md:w-2/5"
             initial="hidden"
             whileInView="visible"
             viewport={{ once: true, amount: 0.3 }}
@@ -172,7 +172,7 @@ export default function HeroSection() {
         transition={{ duration: 0.8 }}
         viewport={{ once: true }}
       >
-        <Card className=" backdrop-blur-xl border-0 shadow-2xl rounded-none">
+        <Card className=" backdrop-blur-xl border-0 shadow-md shadow-teal-100 rounded-none">
           <CardContent className="p-8">
             <form onSubmit={handleSubmit} className="space-y-5">
               <div className="grid md:grid-cols-2 gap-5">
