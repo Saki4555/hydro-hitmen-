@@ -68,7 +68,10 @@ const steps = [
 
 export default function HowWeWork() {
   return (
-    <section className="py-20 lg:py-32 bg-hy-bg-primary">
+    <section className="py-16 relative bg-hy-bg-primary overflow-hidden">
+          {/* Decorative elements */}
+      <div className="bg-hy-accent-secondary/5 absolute top-20 -left-20 h-64 w-64 rounded-full blur-3xl" />
+      <div className="bg-hy-accent-secondary/5 absolute -right-20 bottom-20 h-64 w-64 rounded-full blur-3xl" />
       <SectionContainer>
         
           {/* Header */}
@@ -82,8 +85,8 @@ export default function HowWeWork() {
             {/* Desktop dotted lines */}
             <div className="hidden lg:block absolute top-16 left-1/2 transform -translate-x-1/2 w-full max-w-4xl">
               <div className="flex justify-between items-center h-px">
-                <div className="flex-1 border-t-2 border-dotted border-hy-border-accent/50 mx-8"></div>
-                <div className="flex-1 border-t-2 border-dotted border-hy-border-accent/50 mx-8"></div>
+                <div className="flex-1 border-t-2 border-dotted border-hy-border mx-8"></div>
+                <div className="flex-1 border-t-2 border-dotted border-hy-border mx-8"></div>
               </div>
             </div>
 

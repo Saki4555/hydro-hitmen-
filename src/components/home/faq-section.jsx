@@ -1,147 +1,19 @@
 "use client";
 
-import { useState } from "react";
-import { motion, AnimatePresence } from "framer-motion";
-import { ChevronDown } from "lucide-react";
-import { cn } from "@/lib/utils";
+
+import { motion } from "framer-motion";
+import {  ChevronRight } from "lucide-react";
+
 
 import { SectionContainer } from "../section-container";
 import BadgeAndHeading from "../shared/badge-heading";
 import Image from "next/image";
+import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "../ui/mp-accordion";
 
-function FAQItem({ question, answer, index }) {
-  const [isOpen, setIsOpen] = useState(false);
 
-  return (
-    <motion.div
-      initial={{ opacity: 0, y: 10 }}
-      animate={{ opacity: 1, y: 0 }}
-      transition={{
-        duration: 0.3,
-        delay: index * 0.15,
-        ease: "easeOut",
-      }}
-      className={cn(
-        "group border-hy-border-accent rounded-none border",
-        "transition-all duration-200 ease-in-out",
-        isOpen
-          ? "bg-hy-accent-secondary/5 shadow-md shadow-hy-accent-secondary/20"
-          : "hover:bg-hy-bg-primary bg-hy-bg-secondary"
-      )}
-    >
-      <button
-        type="button"
-        onClick={() => setIsOpen(!isOpen)}
-        className="flex w-full items-center justify-between gap-4 px-6 py-4"
-      >
-        <h3
-          className={cn(
-            "text-left text-base font-medium transition-colors duration-200",
-            "text-foreground/80",
-            isOpen && "text-foreground"
-          )}
-        >
-          {question}
-        </h3>
-        <motion.div
-          animate={{
-            rotate: isOpen ? 180 : 0,
-            scale: isOpen ? 1.1 : 1,
-          }}
-          transition={{
-            duration: 0.3,
-            ease: "easeInOut",
-          }}
-          className={cn(
-            "shrink-0 rounded-full p-0.5",
-            "transition-colors duration-200",
-            isOpen ? "text-hy-text-primary" : "text-hy-text-secondary"
-          )}
-        >
-          <ChevronDown className="h-4 w-4" />
-        </motion.div>
-      </button>
-      <AnimatePresence initial={false}>
-        {isOpen && (
-          <motion.div
-            initial={{ height: 0, opacity: 0 }}
-            animate={{
-              height: "auto",
-              opacity: 1,
-              transition: {
-                height: {
-                  duration: 0.4,
-                  ease: [0.04, 0.62, 0.23, 0.98],
-                },
-                opacity: {
-                  duration: 0.25,
-                  delay: 0.1,
-                },
-              },
-            }}
-            exit={{
-              height: 0,
-              opacity: 0,
-              transition: {
-                height: {
-                  duration: 0.3,
-                  ease: "easeInOut",
-                },
-                opacity: {
-                  duration: 0.25,
-                },
-              },
-            }}
-          >
-            <div className="border-hy-border-accent/80 border-t px-6 pt-2 pb-4">
-              <motion.p
-                initial={{ y: -8, opacity: 0 }}
-                animate={{ y: 0, opacity: 1 }}
-                exit={{ y: -8, opacity: 0 }}
-                transition={{
-                  duration: 0.3,
-                  ease: "easeOut",
-                }}
-                className="text-hy-text-secondary text-base leading-relaxed"
-              >
-                {answer}
-              </motion.p>
-            </div>
-          </motion.div>
-        )}
-      </AnimatePresence>
-    </motion.div>
-  );
-}
 
 export default function Faq3() {
-  const faqs = [
-    {
-      question: "What makes MVPBlocks unique?",
-      answer:
-        "MVPBlocks stands out through its intuitive design, powerful component library, and seamless integration options. We've focused on creating a user experience that combines simplicity with advanced features, all while maintaining excellent performance and accessibility.",
-    },
-    {
-      question: "How can I customize the components?",
-      answer:
-        "All components are built with Tailwind CSS, making them highly customizable. You can modify colors, spacing, typography, and more by simply adjusting the class names or using our theme variables to match your brand identity.",
-    },
-    {
-      question: "Do the components work with dark mode?",
-      answer:
-        "Yes, all MVPBlocks components are designed to work seamlessly with both light and dark modes. They automatically adapt to your site's theme settings, providing a consistent user experience regardless of the user's preference.",
-    },
-    {
-      question: "How can I get started with MVPBlocks?",
-      answer:
-        "You can get started by browsing our component library and copying the code for the components you need. Our documentation provides clear instructions for installation and usage, and you can always reach out to our support team if you need assistance.",
-    },
-    {
-      question: "Can I use MVPBlocks for commercial projects?",
-      answer:
-        "Absolutely! MVPBlocks is free to use for both personal and commercial projects. There are no licensing fees or attribution requirements—just build and launch your MVP faster than ever before.",
-    },
-  ];
+  
 
   return (
     <section className="bg-hy-bg-primary relative w-full overflow-hidden py-16">
@@ -164,9 +36,146 @@ export default function Faq3() {
         <div className="flex flex-col lg:flex-row gap-8 items-center">
           {/* FAQ Section */}
           <div className="mx-auto w-full lg:w-3/5  space-y-2 order-2 lg:order-1">
-            {faqs.map((faq, index) => (
-              <FAQItem key={index} {...faq} index={index} />
-            ))}
+           
+           
+                    {/* <Accordion
+                      className="flex w-full flex-col"
+                      transition={{ type: "spring", stiffness: 120, damping: 20 }}
+                      variants={{
+                        expanded: {
+                          opacity: 1,
+                          scale: 1,
+                        },
+                        collapsed: {
+                          opacity: 0,
+                          scale: 0.7,
+                        },
+                      }}
+                    >
+                      <AccordionItem value="getting-started" className="p-4 border-b border-b-hy-border bg-hy-accent-secondary/5">
+                        <AccordionTrigger className="w-full py-0.5 text-left text-hy-text-primary">
+                          <div className="flex items-center">
+                            <ChevronRight className="h-4 w-4 text-zinc-950 transition-transform duration-200 group-data-expanded:rotate-90 dark:text-zinc-50" />
+                            <div className="ml-2 text-zinc-950 dark:text-zinc-50">
+                              How do I start with Motion-Primitives?
+                            </div>
+                          </div>
+                        </AccordionTrigger>
+                        <AccordionContent className="origin-left">
+                          <p className="pl-6 pr-2 text-hy-text-secondary">
+                            Kick off your experience by setting up Motion-Primitives. This
+                            section covers the basics of installation and how to add
+                            animations to your projects. You’ll get familiar with the
+                            initial setup and the core features quickly.
+                          </p>
+                        </AccordionContent>
+                      </AccordionItem>
+                      <AccordionItem value="animation-properties" className="p-4 bg-hy-accent-secondary/5 border-b border-b-hy-border">
+                        <AccordionTrigger className="w-full py-0.5 text-left text-hy-text-primary">
+                          <div className="flex items-center">
+                            <ChevronRight className="h-4 w-4 text-zinc-950 transition-transform duration-200 group-data-expanded:rotate-90 dark:text-zinc-50" />
+                            <div className="ml-2 text-zinc-950 dark:text-zinc-50">
+                              What are the key animation properties?
+                            </div>
+                          </div>
+                        </AccordionTrigger>
+                        <AccordionContent className="origin-left">
+                          <p className="pl-6 pr-2 text-hy-text-secondary">
+                            Discover a variety of properties to customize your animations.
+                            Learn to adjust timing, easing, and delays for smoother effects.
+                            This guide will help you tailor these settings to your app’s
+                            needs.
+                          </p>
+                        </AccordionContent>
+                      </AccordionItem>
+                      <AccordionItem value="advanced-features" className="p-4 bg-hy-accent-secondary/5 border-b border-b-hy-border">
+                        <AccordionTrigger className="w-full py-0.5 text-left text-hy-text-primary">
+                          <div className="flex items-center">
+                            <ChevronRight className="h-4 w-4 text-zinc-950 transition-transform duration-200 group-data-expanded:rotate-90 dark:text-zinc-50" />
+                            <div className="ml-2 text-zinc-950 dark:text-zinc-50">
+                              How do I use advanced features?
+                            </div>
+                          </div>
+                        </AccordionTrigger>
+                        <AccordionContent className="origin-left">
+                          <p className="pl-6 pr-2 text-hy-text-secondary">
+                            Advance your skills by using more complex functions of
+                            Motion-Primitives. Explore how to link animations together,
+                            create intricate sequences, and interact with motion sensors for
+                            dynamic effects.
+                          </p>
+                        </AccordionContent>
+                      </AccordionItem>
+                      <AccordionItem value="community-support" className="p-4 bg-hy-accent-secondary/5">
+                        <AccordionTrigger className="w-full py-0.5 text-left text-hy-text-primary">
+                          <div className="flex items-center">
+                            <ChevronRight className="h-4 w-4 text-zinc-950 transition-transform duration-200 group-data-expanded:rotate-90 dark:text-zinc-50" />
+                            <div className="ml-2 text-zinc-950 dark:text-zinc-50">
+                              How do I engage with the community?
+                            </div>
+                          </div>
+                        </AccordionTrigger>
+                        <AccordionContent className="origin-left">
+                          <p className="pl-6 pr-2 text-hy-text-secondary">
+                            Connect with the Motion-Primitives community for support and
+                            collaboration. Learn how to contribute, share knowledge, and
+                            access helpful resources. Stay updated on new updates and
+                            collective insights.
+                          </p>
+                        </AccordionContent>
+                      </AccordionItem>
+                    </Accordion> */}
+                    <Accordion
+  className="flex w-full flex-col"
+  transition={{ type: "spring", stiffness: 120, damping: 20 }}
+  variants={{
+    expanded: { opacity: 1, scale: 1 },
+    collapsed: { opacity: 0, scale: 0.98 },
+  }}
+>
+  {[
+    {
+      value: "getting-started",
+      title: "How do I start with Motion-Primitives?",
+      content:
+        "Kick off your experience by setting up Motion-Primitives. This section covers the basics of installation and how to add animations to your projects. You’ll get familiar with the initial setup and the core features quickly.",
+    },
+    {
+      value: "animation-properties",
+      title: "What are the key animation properties?",
+      content:
+        "Discover a variety of properties to customize your animations. Learn to adjust timing, easing, and delays for smoother effects. This guide will help you tailor these settings to your app’s needs.",
+    },
+    {
+      value: "advanced-features",
+      title: "How do I use advanced features?",
+      content:
+        "Advance your skills by using more complex functions of Motion-Primitives. Explore how to link animations together, create intricate sequences, and interact with motion sensors for dynamic effects.",
+    },
+    {
+      value: "community-support",
+      title: "How do I engage with the community?",
+      content:
+        "Connect with the Motion-Primitives community for support and collaboration. Learn how to contribute, share knowledge, and access helpful resources. Stay updated on new updates and collective insights.",
+    },
+  ].map((item) => (
+    <AccordionItem
+      key={item.value}
+      value={item.value}
+      className="p-4 bg-hy-bg-secondary border-b border-hy-border group transition-colors duration-200 hover:bg-hy-accent-secondary/10"
+    >
+      <AccordionTrigger className="w-full text-left text-hy-text-primary flex items-center gap-2">
+        <ChevronRight className="h-4 w-4 text-hy-text-primary transition-transform duration-200 group-data-expanded:rotate-90" />
+        <span className="font-medium text-sm md:text-base">{item.title}</span>
+      </AccordionTrigger>
+      <AccordionContent className="mt-2 origin-top text-sm text-hy-text-secondary pl-6 pr-2 leading-relaxed">
+        {item.content}
+      </AccordionContent>
+    </AccordionItem>
+  ))}
+</Accordion>
+
+                
           </div>
 
           {/* Fixed Image Section */}

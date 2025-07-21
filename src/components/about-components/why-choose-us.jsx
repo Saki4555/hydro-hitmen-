@@ -5,7 +5,7 @@ import { SectionContainer } from "../section-container";
 
 export default function WhyChooseUs() {
   return (
-    <div className="bg-hy-bg-primary overflow-hidden">
+    <div className="bg-hy-bg-primary overflow-hidden py-16">
       <SectionContainer className='group isolate'>
      
         <div className="grid grid-cols-1 lg:grid-cols-2 shadow-2xl">

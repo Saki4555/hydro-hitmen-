@@ -5,7 +5,7 @@ import Testimonial from "@/components/home/testimonial";
 import { SectionContainer } from "@/components/section-container";
 import BadgeAndHeading from "@/components/shared/badge-heading";
 
-const Home = () => {
+const HomePageContent = () => {
   return (
     <>
     <div className="py-20 bg-hy-bg-primary overflow-hidden">
@@ -17,21 +17,25 @@ const Home = () => {
             title="Pressure Washing"
             imageLeft="https://images.unsplash.com/photo-1558618666-fcd25c85cd64?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80"
             imageRight="https://images.unsplash.com/photo-1581578731548-c64695cc6952?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&q=80"
+            url="/services/pressure-washing"
           />
           <ServiceWithImageComparisonCard
             title="Window Cleaning"
             imageLeft="https://images.unsplash.com/photo-1558618666-fcd25c85cd64?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80"
             imageRight="https://images.unsplash.com/photo-1581578731548-c64695cc6952?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&q=80"
+             url="/services/window-cleaning"
           />
           <ServiceWithImageComparisonCard
             title="Gutter Cleaning"
             imageLeft="https://images.unsplash.com/photo-1558618666-fcd25c85cd64?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80"
             imageRight="https://images.unsplash.com/photo-1581578731548-c64695cc6952?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&q=80"
+             url="/services/gutter-cleaning"
           />
           <ServiceWithImageComparisonCard
             title="Roof Soft Wash"
             imageLeft="https://images.unsplash.com/photo-1558618666-fcd25c85cd64?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80"
             imageRight="https://images.unsplash.com/photo-1581578731548-c64695cc6952?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&q=80"
+             url="/services/roof-soft-wash"
           />
         </div>
       </SectionContainer>
@@ -44,4 +48,4 @@ const Home = () => {
   );
 };
 
-export default Home;
+export default HomePageContent;

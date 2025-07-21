@@ -1,6 +1,7 @@
 import HeroSection from "@/components/hero-section";
 import PowerWashingSection from "@/components/home/introduction-section";
-import Home from "@/pages/home";
+import HomePageContent from "@/pages/home-page-content";
+
 
 
 
@@ -9,7 +10,7 @@ export default function HomePage() {
    <div className="pb-32">
       <HeroSection />
       <PowerWashingSection />
-    <Home />
+    <HomePageContent />
     
    </div>
   );

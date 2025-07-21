@@ -1,5 +1,6 @@
 "use client";
 
+import Link from "next/link";
 import {
   ImageComparison,
   ImageComparisonImage,
@@ -10,6 +11,7 @@ export function ServiceWithImageComparisonCard({
   title,
   imageLeft,
   imageRight,
+  url
 }) {
   return (
     <div className="rounded-none overflow-hidden shadow-md shadow-hy-accent-secondary/20 bg-white dark:bg-zinc-900 border border-zinc-200 dark:border-zinc-800">
@@ -36,9 +38,9 @@ export function ServiceWithImageComparisonCard({
         <div className="absolute top-0 left-1/2 w-16 h-px bg-gradient-to-r from-transparent via-hy-accent-primary/40 to-transparent -translate-x-1/2"></div>
 
         <div className="relative z-10">
-          <h3 className="text-2xl font-bold bg-gradient-to-r from-hy-accent-primary via-hy-accent-primary/90 to-hy-accent-secondary bg-clip-text text-transparent drop-shadow-sm tracking-tight">
+          <Link href={url}><h3 className="text-2xl font-bold bg-gradient-to-r from-hy-accent-primary via-hy-accent-primary/90 to-hy-accent-secondary hover:text-hy-text-primary transition-colors duration-300 bg-clip-text text-transparent drop-shadow-sm tracking-tight">
             {title}
-          </h3>
+          </h3></Link>
           <div className="mt-2 w-12 h-0.5 bg-gradient-to-r from-hy-accent-secondary to-hy-accent-primary rounded-full mx-auto opacity-70"></div>
         </div>
       </div>
