@@ -55,15 +55,15 @@ const Navbar = () => {
     <nav
       className={`h-16 fixed top-0 left-0 z-[999] w-full overflow-hidden md:border-b border-white/50 transition-colors duration-300 ${
   isVisible
-    ? "bg-hy-accent-primary/60 backdrop-blur-none" 
+    ? "bg-hy-accent-primary/70 backdrop-blur-none" 
     : pathname !== "/services" && pathname.startsWith("/services")
-    ? "bg-hy-accent-primary/60 backdrop-blur-3xl"
+    ? "bg-hy-accent-primary/70 backdrop-blur-3xl"
     : pathname === "/services"
     ? isScrolled
-      ? "bg-hy-accent-primary/60 backdrop-blur-3xl"
+      ? "bg-hy-accent-primary/70 backdrop-blur-3xl"
       : "bg-transparent backdrop-blur-none"
     : isScrolled
-    ? "bg-hy-accent-primary/60 backdrop-blur-3xl"
+    ? "bg-hy-accent-primary/70 backdrop-blur-3xl"
     : "bg-transparent backdrop-blur-none"
 }`}
 
@@ -105,7 +105,7 @@ const Navbar = () => {
         <ul
           className={`${
             isVisible ? "flex" : "hidden"
-          } animate-fade-in fixed top-16 left-0 z-10 h-screen w-full flex-col bg-hy-accent-primary/70 backdrop-blur-2xl md:backdrop-blur-none md:bg-transparent  md:static md:top-0 md:flex md:h-full md:w-[72%] md:flex-row lg:w-[65%]`}
+          } animate-fade-in fixed top-16 left-0 z-10 h-screen w-full flex-col bg-hy-accent-primary/80 backdrop-blur-2xl md:backdrop-blur-none md:bg-transparent  md:static md:top-0 md:flex md:h-full md:w-[72%] md:flex-row lg:w-[65%]`}
         >
           {navItems.map((item) => (
             <li

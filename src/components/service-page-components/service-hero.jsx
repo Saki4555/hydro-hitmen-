@@ -6,7 +6,7 @@
 import Image from "next/image";
 import Link from "next/link";
 
-export default function AboutHero() {
+export default function ServiceHero() {
 
  
  
@@ -33,7 +33,7 @@ export default function AboutHero() {
         <div className="flex-1 flex items-center justify-center">
           <div className="text-center text-white px-4">
             <h1 className="text-6xl md:text-8xl font-bold tracking-wide mb-8">
-              About Us
+              Services
             </h1>
           </div>
         </div>
@@ -45,7 +45,7 @@ export default function AboutHero() {
               <Link href='/' className="text-sm ">Home</Link>
             </div>
             <span className=" text-sm">/</span>
-            <span className="text-sm font-medium">About</span>
+            <span className="text-sm font-medium">Services</span>
           </div>
         </div>
       </div>

@@ -1,8 +1,11 @@
+import ServicePageContents from '@/pages/service-page-content'
 import React from 'react'
 
 const ServicesPage = () => {
   return (
-    <div>ServicesPage</div>
+<>
+<ServicePageContents />
+</>
   )
 }
 
