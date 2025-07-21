@@ -20,6 +20,7 @@ import {
   ShieldCheck,
   BadgeCheck,
 } from "lucide-react";
+import Image from "next/image";
 
 export default function HeroSection() {
   const [formData, setFormData] = useState({
@@ -87,10 +88,12 @@ export default function HeroSection() {
     <section className="relative bg-gradient-to-br min-h-screen from-slate-900 via-slate-800 to-slate-900">
       {/* Background image */}
       <div className="absolute inset-0 z-0">
-        <img
+        <Image
           src="https://images.unsplash.com/photo-1558618666-fcd25c85cd64?ixlib=rb-4.0.3&auto=format&fit=crop&w=2070&q=80"
           alt="Background"
-          className="w-full h-full object-cover"
+          fill
+          className="object-cover"
+          priority
         />
         <div className="absolute inset-0 bg-slate-900/80" />
       </div>
@@ -173,7 +176,7 @@ export default function HeroSection() {
         viewport={{ once: true }}
       >
         <Card className=" backdrop-blur-xl border-0 shadow-md shadow-teal-100 rounded-none">
-          <CardContent className="p-8">
+          <CardContent className="p-6 sm:p-8">
             <form onSubmit={handleSubmit} className="space-y-5">
               <div className="grid md:grid-cols-2 gap-5">
                 <Input
@@ -189,7 +192,7 @@ export default function HeroSection() {
                   placeholder="Email Address"
                   value={formData.email}
                   onChange={(e) => handleInputChange("email", e.target.value)}
-                   className="bg-hy-input-bg  text-hy-input-text placeholder:text-hy-input-placeholder border border-hy-input-border focus-visible:ring-2 focus-visible:ring-hy-input-focus-ring"
+                  className="bg-hy-input-bg  text-hy-input-text placeholder:text-hy-input-placeholder border border-hy-input-border focus-visible:ring-2 focus-visible:ring-hy-input-focus-ring"
                 />
               </div>
 
@@ -199,7 +202,7 @@ export default function HeroSection() {
                   placeholder="Phone Number"
                   value={formData.phone}
                   onChange={(e) => handleInputChange("phone", e.target.value)}
-                   className="bg-hy-input-bg  text-hy-input-text placeholder:text-hy-input-placeholder border border-hy-input-border focus-visible:ring-2 focus-visible:ring-hy-input-focus-ring"
+                  className="bg-hy-input-bg  text-hy-input-text placeholder:text-hy-input-placeholder border border-hy-input-border focus-visible:ring-2 focus-visible:ring-hy-input-focus-ring"
                 />
 
                 <Select
@@ -208,16 +211,25 @@ export default function HeroSection() {
                   }
                 >
                   <SelectTrigger className="w-full   bg-hy-input-bg text-hy-input-text border border-hy-input-border focus-visible:ring-2 data-[placeholder]:text-hy-input-placeholder focus-visible:ring-hy-input-focus-ring">
-                    <SelectValue placeholder="Select Service"/>
+                    <SelectValue placeholder="Select Service" />
                   </SelectTrigger>
                   <SelectContent className="">
-                    <SelectItem value="pressure-washing" className="focus:bg-hy-accent-primary/10  [&_svg:not([class*='text-'])]:text-hy-accent-primary">
+                    <SelectItem
+                      value="pressure-washing"
+                      className="focus:bg-hy-accent-primary/10  [&_svg:not([class*='text-'])]:text-hy-accent-primary"
+                    >
                       Pressure Washing
                     </SelectItem>
-                    <SelectItem value="window-cleaning" className="focus:bg-hy-accent-primary/10  [&_svg:not([class*='text-'])]:text-hy-accent-primary">
+                    <SelectItem
+                      value="window-cleaning"
+                      className="focus:bg-hy-accent-primary/10  [&_svg:not([class*='text-'])]:text-hy-accent-primary"
+                    >
                       Window Cleaning
                     </SelectItem>
-                    <SelectItem value="gutter-cleaning" className="focus:bg-hy-accent-primary/10  [&_svg:not([class*='text-'])]:text-hy-accent-primary">
+                    <SelectItem
+                      value="gutter-cleaning"
+                      className="focus:bg-hy-accent-primary/10  [&_svg:not([class*='text-'])]:text-hy-accent-primary"
+                    >
                       Gutter Cleaning
                     </SelectItem>
                   </SelectContent>

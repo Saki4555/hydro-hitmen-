@@ -22,12 +22,12 @@ const MobileTestimonialCard = ({ rating, testimonial, name, title }) => {
 
   return (
    
-    <div className="bg-hy-bg-secondary border mb-4 border-hy-border-accent/20 rounded-none backdrop-blur-3xl shadow-md shadow-hy-accent-secondary/40 p-6 w-full h-full flex flex-col justify-between space-y-6">
+    <div className="bg-hy-bg-secondary border mb-4 border-hy-border-accent/50 rounded-none backdrop-blur-3xl shadow-md shadow-hy-accent-secondary/40 p-10 w-full h-full flex flex-col justify-between space-y-6">
       {/* Quote Icon */}
       <IconQuote className="w-6 h-6 opacity-70" />
 
       {/* Testimonial Text */}
-      <p className="text-hy-text-primary text-lg font-medium">
+      <p className="text-hy-text-primary text-base font-medium">
         “{testimonial}”
       </p>
 
