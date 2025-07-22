@@ -32,7 +32,8 @@ export default function ContactPageContent() {
       <ContactHero />
       <motion.div
         initial={{ opacity: 0, y: 20 }}
-        animate={{ opacity: 1, y: 0 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        viewport={{once: true, amount: 0.1}}
         transition={{ duration: 0.6 }}
         className="relative"
       >
@@ -57,7 +58,8 @@ export default function ContactPageContent() {
           {/* Contact Info Cards */}
           <motion.div
             initial={{ opacity: 0, y: 40 }}
-            animate={{ opacity: 1, y: 0 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{once: true, amount: 0.1}}
             transition={{ delay: 0.4, duration: 0.6 }}
             className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-16 -mt-8"
           >
@@ -65,7 +67,7 @@ export default function ContactPageContent() {
               <ContactInfoCard
                 key={index}
                 {...info}
-                delay={0.5 + index * 0.1}
+                index={index}
               />
             ))}
           </motion.div>
@@ -75,7 +77,8 @@ export default function ContactPageContent() {
             {/* Contact Form */}
             <motion.div
               initial={{ opacity: 0, x: -40 }}
-              animate={{ opacity: 1, x: 0 }}
+              whileInView={{ opacity: 1, x: 0 }}
+              viewport={{once: true, amount: 0.1}}
               transition={{ delay: 0.6, duration: 0.6 }}
             >
               <ContactForm />
@@ -84,7 +87,8 @@ export default function ContactPageContent() {
             {/* Map Section */}
             <motion.div
               initial={{ opacity: 0, x: 40 }}
-              animate={{ opacity: 1, x: 0 }}
+              whileInView={{ opacity: 1, x: 0 }}
+              viewport={{once: true, amount: 0.1}}
               transition={{ delay: 0.7, duration: 0.6 }}
             >
               <MapSection />

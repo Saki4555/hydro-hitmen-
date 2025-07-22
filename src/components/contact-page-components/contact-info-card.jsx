@@ -5,7 +5,7 @@ export default function ContactInfoCard({
   icon: Icon,
   title,
   items,
-  delay = 0,
+  index
 }) {
   // Detect type based on title
   const getLink = (text) => {
@@ -24,8 +24,9 @@ export default function ContactInfoCard({
   return (
     <motion.div
       initial={{ opacity: 0, y: 20 }}
-      animate={{ opacity: 1, y: 0 }}
-      transition={{ delay, duration: 0.5 }}
+      whileInView={{ opacity: 1, y: 0 }}
+      viewport={{once: true, amount: 0.1}}
+      transition={{ delay: index * 2, duration: 0.5 }}
       whileHover={{ y: -5 }}
       className="group"
     >

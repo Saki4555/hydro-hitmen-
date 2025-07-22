@@ -35,10 +35,10 @@ export default function Faq3() {
         <div className="flex flex-col lg:flex-row gap-8 items-center">
           {/* FAQ List with fade-up stagger */}
           <motion.div
-            initial="hidden"
-            whileInView="show"
-            transition={{ staggerChildren: 0.1 }}
-            viewport={{ once: true }}
+            initial={{ opacity: 0 }}
+            whileInView={{ opacity: 1 }}
+            viewport={{once: true, amount: 0.1}}
+            transition={{ delay: 0.2, duration: 0.3 }}
             className="mx-auto w-full lg:w-3/5 space-y-2 order-2 lg:order-1"
           >
             <Accordion className="flex w-full flex-col gap-3">
@@ -71,7 +71,8 @@ export default function Faq3() {
                 <motion.div
                   key={item.value}
                   initial={{ opacity: 0, y: 20 }}
-                  animate={{ opacity: 1, y: 0 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  viewport={{once: true, amount: 0.1}}
                   transition={{ delay: i * 0.2, duration: 0.4 }}
                 >
                   <AccordionItem

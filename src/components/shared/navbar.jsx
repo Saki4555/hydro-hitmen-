@@ -17,6 +17,10 @@ const navItems = [
     label: "Services",
     href: "/services",
   },
+  {
+    label: "Gallery",
+    href: "/gallery",
+  },
 
   {
     label: "Contact",

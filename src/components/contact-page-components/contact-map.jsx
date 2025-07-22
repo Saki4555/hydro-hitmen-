@@ -11,7 +11,8 @@ export default function MapSection() {
       {/* Map Header */}
       <motion.div 
         initial={{ opacity: 0, y: 20 }}
-        animate={{ opacity: 1, y: 0 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        viewport={{once: true, amount: 0.1}}
         transition={{ delay: 0.2 }}
         className="mb-6"
       >
@@ -29,7 +30,8 @@ export default function MapSection() {
       {/* Map Container */}
       <motion.div
         initial={{ opacity: 0, scale: 0.95 }}
-        animate={{ opacity: 1, scale: 1 }}
+        whileInView={{ opacity: 1, scale: 1 }}
+        viewport={{once: true, amount: 0.1}}
         transition={{ delay: 0.4, duration: 0.6 }}
         className="group"
       >
@@ -58,7 +60,8 @@ export default function MapSection() {
             {/* Location Badge */}
             <motion.div 
               initial={{ opacity: 0, y: 10 }}
-              animate={{ opacity: 1, y: 0 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{once: true, amount: 0.1}}
               transition={{ delay: 0.8 }}
               className="absolute top-4 left-4 bg-white/95 backdrop-blur-sm rounded-lg px-4 py-2 shadow-lg border border-gray-100"
             >
@@ -75,7 +78,8 @@ export default function MapSection() {
       {/* Additional Location Info */}
       <motion.div 
         initial={{ opacity: 0, y: 20 }}
-        animate={{ opacity: 1, y: 0 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        viewport={{once: true, amount: 0.1}}
         transition={{ delay: 0.6 }}
         className="mt-6 grid grid-cols-1 sm:grid-cols-2 gap-4"
       >
