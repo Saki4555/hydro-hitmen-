@@ -60,7 +60,7 @@
   --color-hy-accent-secondary: var(--color-teal-600);
 
   /* borders */
-  --color-hy-border: var(--color-gray-200);
+  --color-hy-border: var(--color-gray-300);
   --color-hy-border-accent: var(--color-cyan-200); /* or teal-500 */
 
   /* Input fields */

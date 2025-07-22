@@ -19,7 +19,7 @@ export default function WhyChooseAndFAQs() {
   return (
     <div className="flex flex-col items-center lg:flex-row gap-8 px-4 pt-10 max-w-6xl mx-auto">
       {/* Features List - Left Side */}
-      <div className="flex-1 w-2/5 bg-hy-bg-secondary p-5 border-l-2 border-hy-border-accent">
+      <div className="flex-1 w-full lg:w-2/5 bg-hy-bg-secondary p-5 border-l-2 border-hy-border-accent">
         <div className="space-y-4">
           {features.map((feature, index) => (
             <div key={index} className="flex items-center gap-3">
@@ -33,7 +33,7 @@ export default function WhyChooseAndFAQs() {
       </div>
 
       {/* Demo Div - Right Side */}
-      <div className="w-3/5">
+      <div className="w-full lg:w-3/5">
         <Accordion
           className="flex w-full flex-col border border-hy-border"
           transition={{ type: "spring", stiffness: 120, damping: 20 }}
