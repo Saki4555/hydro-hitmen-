@@ -2,16 +2,24 @@ import { IconCheck } from "@tabler/icons-react";
 import Image from "next/image";
 import React from "react";
 import { SectionContainer } from "../section-container";
+import * as motion from "motion/react-client";
+import { Sparkles } from "lucide-react";
+import { cn } from "@/lib/utils";
 
 export default function WhyChooseUs() {
   return (
     <div className="bg-hy-bg-primary overflow-hidden py-16">
-      <SectionContainer className='group isolate'>
-     
+      <SectionContainer className="group isolate">
         <div className="grid grid-cols-1 lg:grid-cols-2 shadow-2xl">
-          {/* Left Column - Blue Section */}
-          <div className="bg-hy-accent-primary text-white p-8 md:p-12 lg:p-16 relative overflow-hidden">
-            {/* Dotted pattern overlay */}
+          {/* Left Column with animation */}
+          <motion.div
+            className="bg-hy-accent-primary text-white p-7 md:p-11 lg:p-16 relative overflow-hidden"
+            initial={{ opacity: 0, y: 40 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8, ease: "easeOut", delay: 0.2 }}
+            viewport={{ once: true, amount: 0.2 }}
+          >
+            {/* Pattern & Swoosh */}
             <div
               className="absolute top-0 left-0 w-64 h-64 opacity-50"
               style={{
@@ -19,19 +27,45 @@ export default function WhyChooseUs() {
                   "radial-gradient(circle, #3b82f6 1px, transparent 1px)",
                 backgroundSize: "16px 16px",
               }}
-            ></div>
-            {/* Swoosh overlay */}
-            <div className="absolute -bottom-32 -right-32 w-80 h-80 bg-white/5 rounded-full"></div>
+            />
+            <div className="absolute -bottom-32 -right-32 w-80 h-80 bg-white/5 rounded-full" />
 
             <div className="relative z-10">
-              <p className="text-cyan-100 font-semibold mb-2">Why Choose Us</p>
-              <h2 className="text-4xl md:text-5xl font-bold leading-tight mb-4">
-                Why will You Choose Our Services?
-              </h2>
-              <p className="text-cyan-100 mb-10 max-w-md">
-                Our business is committed to making your life easier by offering
-                laundry pick-up.
-              </p>
+              {/* Badge & Heading (unchanged animation) */}
+              <motion.div
+                className={cn("mb-8 max-w-3xl")}
+                initial={{ opacity: 0, y: 30 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.8, ease: "easeOut" }}
+                viewport={{ once: true, amount: 0.1 }}
+              >
+                <motion.div
+                  className="inline-flex items-center gap-2 px-4 py-2 bg-cyan-50 border border-cyan-200 text-cyan-700 rounded-full mb-1"
+                  initial={{ opacity: 0, y: 10 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  transition={{ duration: 0.6, delay: 0.1 }}
+                  viewport={{ once: true, amount: 0.1 }}
+                >
+                  <Sparkles className="w-4 h-4 text-cyan-500" />
+                  <span className="font-medium uppercase text-xs tracking-wide">
+                    Why Choose HydroHitmen
+                  </span>
+                </motion.div>
+
+                <motion.h2
+                  className="text-2xl md:text-3xl lg:text-4xl font-bold text-white leading-tight mb-6"
+                  initial={{ opacity: 0, y: 20 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  transition={{ duration: 0.7, delay: 0.2 }}
+                  viewport={{ once: true, amount: 0.1 }}
+                >
+                  Why will You Choose Our Services?
+                </motion.h2>
+                <p className="text-cyan-100 mb-10 max-w-md">
+                  Our business is committed to making your life easier by
+                  offering laundry pick-up.
+                </p>
+              </motion.div>
 
               <div className="space-y-8">
                 <Feature title="Toxin-free Cleaning Supplies">
@@ -44,17 +78,22 @@ export default function WhyChooseUs() {
                 </Feature>
               </div>
             </div>
-          </div>
+          </motion.div>
 
-          {/* Right Column - Image Section */}
-          <div className="relative min-h-[450px] overflow-hidden lg:min-h-0">
+          {/* Right Column with animation */}
+          <motion.div
+            className="relative min-h-[450px] overflow-hidden lg:min-h-0"
+            initial={{ opacity: 0, y: 40 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8, ease: "easeOut", delay: 0.4 }}
+            viewport={{ once: true, amount: 0.2 }}
+          >
             <Image
               src="https://images.unsplash.com/photo-1581578731548-c64695cc6952?q=80&w=2070&auto=format&fit=crop"
               alt="Woman cleaning a kitchen cabinet"
               fill
               className="object-cover group-hover:scale-105 transform transition-transform duration-500"
             />
-
             <div className="absolute bottom-0 left-0 right-0 p-4 md:p-6 lg:p-8">
               <div className="flex flex-col sm:flex-row gap-4 max-w-3xl">
                 <div className="bg-hy-accent-secondary text-white p-6 flex-1 min-h-[120px] flex flex-col justify-center">
@@ -69,9 +108,8 @@ export default function WhyChooseUs() {
                 </div>
               </div>
             </div>
-          </div>
+          </motion.div>
         </div>
-  
       </SectionContainer>
     </div>
   );

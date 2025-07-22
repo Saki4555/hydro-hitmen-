@@ -1,4 +1,7 @@
+
+
 import React from "react";
+import * as motion from "motion/react-client";
 import BadgeAndHeading from "../shared/badge-heading";
 import { SectionContainer } from "../section-container";
 
@@ -69,62 +72,75 @@ const steps = [
 export default function HowWeWork() {
   return (
     <section className="py-16 relative bg-hy-bg-primary overflow-hidden">
-          {/* Decorative elements */}
+      {/* Decorative elements */}
       <div className="bg-hy-accent-secondary/5 absolute top-20 -left-20 h-64 w-64 rounded-full blur-3xl" />
       <div className="bg-hy-accent-secondary/5 absolute -right-20 bottom-20 h-64 w-64 rounded-full blur-3xl" />
       <SectionContainer>
-        
-          {/* Header */}
-          <BadgeAndHeading
-            heading="Our Working Process"
-            badgeText="How It Works"
-          />
+        {/* Header */}
+        <BadgeAndHeading heading="Our Working Process" badgeText="How It Works" />
 
-          {/* Steps */}
-          <div className="relative">
-            {/* Desktop dotted lines */}
-            <div className="hidden lg:block absolute top-16 left-1/2 transform -translate-x-1/2 w-full max-w-4xl">
-              <div className="flex justify-between items-center h-px">
-                <div className="flex-1 border-t-2 border-dotted border-hy-border mx-8"></div>
-                <div className="flex-1 border-t-2 border-dotted border-hy-border mx-8"></div>
-              </div>
-            </div>
-
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-12 lg:gap-8">
-              {steps.map((step, index) => (
-                <div key={step.id} className="relative group">
-                  {/* Mobile dotted line (vertical) */}
-                  {index < steps.length - 1 && (
-                    <div className="lg:hidden absolute left-1/2 top-full transform -translate-x-1/2 w-px h-12 border-l-2 border-dotted border-hy-border"></div>
-                  )}
-
-                  <div className="text-center transform transition-all duration-500 hover:scale-105">
-                    {/* Icon Circle */}
-                    <div className="relative mx-auto mb-8">
-                      <div className="w-32 h-32 mx-auto bg-hy-bg-primary border-2 border-dotted border-hy-border rounded-full flex items-center justify-center text-hy-accent-primary transition-all duration-300 shadow-md shadow-hy-accent-secondary/20 group-hover:border-hy-border-accent group-hover:shadow-xl">
-                        {step.icon}
-                      </div>
-
-                      {/* Step number badge */}
-                      <div className="absolute -top-2 -right-2 w-8 h-8 bg-hy-accent-primary text-white text-sm font-bold rounded-full flex items-center justify-center shadow-lg">
-                        {step.id}
-                      </div>
-                    </div>
-
-                    {/* Content */}
-                    <div className="space-y-4">
-                      <h3 className="text-2xl font-bold text-hy-text-primary tracking-tight">
-                        {step.title}
-                      </h3>
-                      <p className="text-hy-text-secondary leading-relaxed max-w-sm mx-auto">
-                        {step.description}
-                      </p>
-                    </div>
-                  </div>
-                </div>
-              ))}
+        {/* Steps */}
+        <motion.div
+          initial={{ opacity: 0, y: 40 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.6, ease: "easeOut" }}
+          viewport={{ once: true, amount: 0.1 }}
+          className="relative"
+        >
+          {/* Desktop dotted lines */}
+          <div className="hidden lg:block absolute top-16 left-1/2 transform -translate-x-1/2 w-full max-w-4xl">
+            <div className="flex justify-between items-center h-px">
+              <div className="flex-1 border-t-2 border-dotted border-hy-border mx-8"></div>
+              <div className="flex-1 border-t-2 border-dotted border-hy-border mx-8"></div>
             </div>
           </div>
+
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-12 lg:gap-8">
+            {steps.map((step, index) => (
+              <motion.div
+                key={step.id}
+                className="relative group"
+                initial={{ opacity: 0, y: 40 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                transition={{
+                  duration: 0.6,
+                  ease: "easeOut",
+                  delay: index * 0.3,
+                }}
+                viewport={{ once: true, amount: 0.2 }}
+              >
+                {/* Mobile dotted line (vertical) */}
+                {index < steps.length - 1 && (
+                  <div className="lg:hidden absolute left-1/2 top-full transform -translate-x-1/2 w-px h-12 border-l-2 border-dotted border-hy-border"></div>
+                )}
+
+                <div className="text-center transform transition-all duration-500 hover:scale-105">
+                  {/* Icon Circle */}
+                  <div className="relative mx-auto mb-8">
+                    <div className="w-32 h-32 mx-auto bg-hy-bg-primary border-2 border-dotted border-hy-border rounded-full flex items-center justify-center text-hy-accent-primary transition-all duration-300 shadow-md shadow-hy-accent-secondary/20 group-hover:border-hy-border-accent group-hover:shadow-xl">
+                      {step.icon}
+                    </div>
+
+                    {/* Step number badge */}
+                    <div className="absolute -top-2 -right-2 w-8 h-8 bg-hy-accent-primary text-white text-sm font-bold rounded-full flex items-center justify-center shadow-lg">
+                      {step.id}
+                    </div>
+                  </div>
+
+                  {/* Content */}
+                  <div className="space-y-4">
+                    <h3 className="text-2xl font-bold text-hy-text-primary tracking-tight">
+                      {step.title}
+                    </h3>
+                    <p className="text-hy-text-secondary leading-relaxed max-w-sm mx-auto">
+                      {step.description}
+                    </p>
+                  </div>
+                </div>
+              </motion.div>
+            ))}
+          </div>
+        </motion.div>
       </SectionContainer>
     </section>
   );

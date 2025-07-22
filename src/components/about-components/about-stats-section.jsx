@@ -1,10 +1,12 @@
-import React from "react";
+
+
 import {
   IconBuildingSkyscraper,
   IconUserCheck,
   IconStar,
   IconAward,
 } from "@tabler/icons-react";
+import * as motion from "motion/react-client";
 import { SectionContainer } from "../section-container";
 
 const AboutStatsSection = () => {
@@ -34,13 +36,20 @@ const AboutStatsSection = () => {
   return (
     <section className="py-16 lg:py-20 overflow-hidden bg-hy-bg-primary">
       <SectionContainer>
-       
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
-            {stats.map((stat, index) => (
-              <div
-                key={index}
-                className="group relative bg-hy-bg-secondary rounded-lg p-8 text-center shadow-lg transition-all duration-500 overflow-hidden hover:shadow-xl"
-              >
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
+          {stats.map((stat, index) => (
+            <motion.div
+              key={index}
+              initial={{ opacity: 0, y: 60 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{once: true, amount: 0.1}}
+              transition={{
+                duration: 0.7,
+                ease: "easeOut",
+                delay: 0.2,
+              }}
+            >
+              <div className="group relative border-t-4 border-t-hy-accent-primary bg-hy-bg-secondary rounded-lg p-8 text-center shadow-lg transition-all duration-500 overflow-hidden hover:shadow-xl">
                 {/* Hover background overlay */}
                 <div className="absolute inset-0 bg-gradient-to-b from-hy-accent-primary to-hy-accent-secondary transform -translate-y-full group-hover:translate-y-0 transition-transform duration-500 ease-out"></div>
 
@@ -62,9 +71,9 @@ const AboutStatsSection = () => {
                   </p>
                 </div>
               </div>
-            ))}
-          </div>
-    
+            </motion.div>
+          ))}
+        </div>
       </SectionContainer>
     </section>
   );

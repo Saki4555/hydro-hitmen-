@@ -86,7 +86,7 @@ const Navbar = () => {
                 alt="Logo"
               /> */}
             </div>
-            <span className="text-white font-semibold text-lg tracking-wider">
+            <span className="text-white uppercase font-semibold text-lg tracking-wider">
               HydroHitmen
             </span>
           </a>

@@ -1,6 +1,6 @@
 import React from "react";
 import { BentoGrid, BentoGridItem } from "../ui/bento-grid";
-import { Button } from "@/components/ui/button";
+
 import {
   IconWash,
   IconWind,
@@ -24,8 +24,10 @@ export function ServicesBentoGrid() {
      {" "}
       <BentoGrid className="max-w-5xl mx-auto md:auto-rows-[23rem]">
         {services.map((service, i) => (
-          <BentoGridItem
+        
+           <BentoGridItem
             key={i}
+            index={i}
             title={service.name}
             description={service.description}
             header={<ServiceImage src={service.image} alt={service.name} />}
@@ -33,6 +35,7 @@ export function ServicesBentoGrid() {
             icon={<service.icon className="h-4 w-4 text-hy-text-secondary" />}
             url={service.url}
           ></BentoGridItem>
+       
         ))}
       </BentoGrid>
     </SectionContainer>
@@ -49,7 +52,7 @@ const ServiceImage = ({ src, alt }) => (
       src={src}
       alt={alt}
       fill
-      className="object-cover rounded-lg "
+      className="object-cover rounded-lg group-hover/bento:scale-[1.030] transition-transform duration-300"
       sizes="(max-width: 768px) 100vw, 33vw"
     />
   </div>
@@ -108,7 +111,7 @@ const BubbleSVG = () => (
 
 // Pressure Washing – high-pressure spray droplets
 const PressureSpray = () => (
-  <svg viewBox="0 0 100 100" className="absolute w-32 h-32 top-8 left-2 opacity-10">
+  <svg viewBox="0 0 100 100" className="absolute w-32 h-32 top-44 left-2 opacity-10">
     <path
       d="M10 90 C30 70, 70 70, 90 90"
       stroke="#06b6d4" strokeWidth="5" fill="none"

@@ -35,20 +35,20 @@ export default function ServiceDescriptionWithQuote({
     <>
       <div className="grid lg:grid-cols-3 gap-8 lg:gap-12 pt-10 items-start">
         {/* Service Description */}
-        <div className="lg:col-span-2 bg-hy-bg-secondary p-5 sm:p-8 border border-hy-border">
+        <div className="lg:col-span-2 bg-hy-bg-secondary p-7 rounded-lg sm:p-9 border border-hy-border">
           <h2
             className="text-4xl lg:text-5xl font-bold mb-6"
             style={{ color: "var(--color-hy-accent-title)" }}
           >
-            {title || "hello"}
+            {title }
           </h2>
           <p className="text-hy-text-secondary text-lg leading-relaxed">
-            {description || "descp"}
+            {description}
           </p>
         </div>
 
         {/* Quote Box */}
-        <div className="lg:col-span-1 bg-hy-accent-primary p-8 rounded-none text-white text-center flex flex-col items-center justify-center h-full">
+        <div className="lg:col-span-1 bg-hy-accent-primary p-8 rounded-lg text-white text-center flex flex-col items-center justify-center h-full">
           <QuoteIcon />
           <p className="text-lg font-semibold opacity-90">Get a Free Quote</p>
           <a

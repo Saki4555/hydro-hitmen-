@@ -2,16 +2,22 @@
 
 import { useRef, useState } from "react";
 import { Swiper, SwiperSlide } from "swiper/react";
-import { Autoplay, Navigation, Pagination, EffectFade } from "swiper/modules";
+import {
+  Autoplay,
+  Navigation,
+  Pagination,
+  EffectFade,
+} from "swiper/modules";
 import { ChevronLeft, ChevronRight } from "lucide-react";
+import { motion } from "motion/react";
 
 import "swiper/css";
 import "swiper/css/navigation";
 import "swiper/css/pagination";
 import "swiper/css/effect-fade";
 import "./testimonial-slider.css";
-import { TESTIMONIALS } from "@/constants";
 
+import { TESTIMONIALS } from "@/constants";
 import { SectionContainer } from "../section-container";
 import BadgeAndHeading from "../shared/badge-heading";
 import MobileTestimonialCard from "./mobile-testimonial-card";
@@ -22,13 +28,27 @@ const MobileTestimonial = () => {
   const nextRef = useRef(null);
 
   return (
-    <div className="bg-bg-primary py-16 lg:hidden">
+    <motion.div
+      initial={{ opacity: 0, y: 30 }}
+      whileInView={{ opacity: 1, y: 0 }}
+      transition={{ duration: 0.6, ease: "easeOut" }}
+      viewport={{ once: true, amount: 0.2 }}
+      className="bg-bg-primary py-16 lg:hidden"
+    >
       <SectionContainer>
         <div className="relative testimonial-slider">
-          <BadgeAndHeading
-            heading="What Our Clients Say"
-            badgeText="Testimonials"
-          />
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.5, ease: "easeOut" }}
+            viewport={{ once: true }}
+          >
+            <BadgeAndHeading
+              heading="What Our Clients Say"
+              badgeText="Testimonials"
+            />
+          </motion.div>
+
           <Swiper
             modules={[Autoplay, Navigation, Pagination, EffectFade]}
             spaceBetween={5}
@@ -59,26 +79,33 @@ const MobileTestimonial = () => {
               768: { slidesPerView: 2 },
               1024: { slidesPerView: 3 },
             }}
-            className=""
           >
             {TESTIMONIALS.map((testimonial) => (
-              <SwiperSlide key={testimonial.id} className="">
-                <MobileTestimonialCard {...testimonial} />
+              <SwiperSlide key={testimonial.id}>
+                <motion.div
+                  initial={{ opacity: 0, scale: 0.98 }}
+                  whileInView={{ opacity: 1, scale: 1 }}
+                  transition={{ duration: 0.5, ease: "easeOut" }}
+                  viewport={{ once: true }}
+                >
+                  <MobileTestimonialCard {...testimonial} />
+                </motion.div>
               </SwiperSlide>
             ))}
           </Swiper>
 
+          {/* Navigation Buttons */}
           <div className="absolute top-1/2 left-0 -translate-y-1/2 w-full z-10 flex justify-between pointer-events-none">
             <button
               ref={prevRef}
-              className="flex items-center justify-center w-10 h-10 rounded-full bg-transparent backdrop-blur-md shadow-md shadow-hy-accent-secondary/20 hover:bg-hy-accent-secondary/60 text-hy-accent-primary hover:text-hy-text-primary   transition-colors pointer-events-auto -translate-x-1/2 md:-translate-x-0"
+              className="flex items-center justify-center w-10 h-10 rounded-full bg-transparent backdrop-blur-md shadow-md shadow-hy-accent-secondary/20 hover:bg-hy-accent-secondary/60 text-hy-accent-primary hover:text-hy-text-primary transition-colors pointer-events-auto -translate-x-1/2 md:-translate-x-0"
               aria-label="Previous testimonial"
             >
               <ChevronLeft size={20} />
             </button>
             <button
               ref={nextRef}
-              className="flex items-center justify-center w-10 h-10 rounded-full bg-transparent backdrop-blur-md shadow-md shadow-hy-accent-secondary/20 hover:bg-hy-accent-secondary/60 text-hy-accent-primary hover:text-hy-text-primary  transition-colors pointer-events-auto translate-x-1/2 md:translate-x-0"
+              className="flex items-center justify-center w-10 h-10 rounded-full bg-transparent backdrop-blur-md shadow-md shadow-hy-accent-secondary/20 hover:bg-hy-accent-secondary/60 text-hy-accent-primary hover:text-hy-text-primary transition-colors pointer-events-auto translate-x-1/2 md:translate-x-0"
               aria-label="Next testimonial"
             >
               <ChevronRight size={20} />
@@ -86,7 +113,7 @@ const MobileTestimonial = () => {
           </div>
         </div>
       </SectionContainer>
-    </div>
+    </motion.div>
   );
 };
 
