@@ -1,7 +1,7 @@
 "use client";
 
 import React, { useState } from "react";
-import { motion } from "motion/react"; 
+import { motion } from "motion/react";
 import { Input } from "@/components/ui/input";
 import { Button } from "@/components/ui/button";
 import {
@@ -12,7 +12,7 @@ import {
   SelectValue,
 } from "@/components/ui/select";
 import { Card, CardContent } from "@/components/ui/card";
-import heroBg from '../assets/hero-images/home-hero.webp';
+import heroBg from "../assets/hero-images/home-hero.webp";
 import {
   Sparkles,
   ArrowRight,
@@ -20,36 +20,48 @@ import {
   Zap,
   ShieldCheck,
   BadgeCheck,
-  Award, // Added for new feature
-  Clock // Added for new feature
+  
 } from "lucide-react"; // Imported new icons
 import Image from "next/image";
 
 export default function HeroSection() {
-  const [formData, setFormData] = useState({
-    fullName: "",
-    email: "",
-    phone: "",
-    serviceType: "",
-  });
+const [formData, setFormData] = useState({
+  fullName: "",
+  email: "",
+  phone: "",
+  serviceType: "",
+});
+const [isSubmitting, setIsSubmitting] = useState(false);
 
   const handleInputChange = (field, value) => {
-    setFormData((prev) => ({ ...prev, [field]: value }));
-  };
+  setFormData((prev) => ({ ...prev, [field]: value }));
+};
 
-  const handleSubmit = (e) => {
-    e.preventDefault();
+
+  const handleSubmit = async (e) => {
+  e.preventDefault();
+  setIsSubmitting(true);
+  try {
+    // Simulate submission delay
+    await new Promise((resolve) => setTimeout(resolve, 1000));
+
     console.log("Quote request:", formData);
-    // Here you would typically send this data to an API
-    alert("Quote request submitted! We'll be in touch soon."); // Simple feedback for demo
-    setFormData({ // Optionally reset form after submission
+    alert("Quote request submitted! We'll be in touch soon.");
+
+    // Reset form
+    setFormData({
       fullName: "",
       email: "",
       phone: "",
       serviceType: "",
     });
-  };
-
+  } catch (error) {
+    console.error("Submission failed:", error);
+    alert("Something went wrong. Please try again.");
+  } finally {
+    setIsSubmitting(false);
+  }
+};
   // Framer Motion variants for animations
   const containerVariants = {
     hidden: { opacity: 0 },
@@ -73,51 +85,39 @@ export default function HeroSection() {
     },
   };
 
- const features = [
+  const features = [
+    {
+      icon: <Droplet className="w-4 h-4 text-white" />,
 
-    {
+      title: "Eco-Friendly Solutions",
 
-      icon: <Droplet className="w-4 h-4 text-white" />,
+      desc: "Safe for your family and environment",
+    },
 
-      title: "Eco-Friendly Solutions",
+    {
+      icon: <Zap className="w-4 h-4 text-white" />,
 
-      desc: "Safe for your family and environment",
+      title: "Fast & Efficient",
 
-    },
+      desc: "Professional results in minimal time",
+    },
 
-    {
+    {
+      icon: <ShieldCheck className="w-4 h-4 text-white" />,
 
-      icon: <Zap className="w-4 h-4 text-white" />,
+      title: "Fully Insured",
 
-      title: "Fast & Efficient",
+      desc: "Complete protection and peace of mind",
+    },
 
-      desc: "Professional results in minimal time",
+    {
+      icon: <BadgeCheck className="w-4 h-4 text-white" />,
 
-    },
+      title: "Quality Guaranteed",
 
-    {
-
-      icon: <ShieldCheck className="w-4 h-4 text-white" />,
-
-      title: "Fully Insured",
-
-      desc: "Complete protection and peace of mind",
-
-    },
-
-    {
-
-      icon: <BadgeCheck className="w-4 h-4 text-white" />,
-
-      title: "Quality Guaranteed",
-
-      desc: "100% satisfaction or we return",
-
-    },
-
-  ];
-
-
+      desc: "100% satisfaction or we return",
+    },
+  ];
 
   return (
     <section className="relative pt-16 bg-gradient-to-br min-h-screen from-slate-900 via-slate-800 to-slate-900">
@@ -127,6 +127,7 @@ export default function HeroSection() {
           src={heroBg}
           alt="Background"
           fill
+          sizes="(max-width: 768px) 100vw, 50vw"
           className="object-cover object-center"
           priority
         />
@@ -153,15 +154,20 @@ export default function HeroSection() {
                 Your Property, Reimagined
               </span>
             </div>
-            <h1 className="text-4xl md:text-5xl lg:text-7xl font-bold text-white mb-6 text-balance"> {/* Added text-balance */}
+            <h1 className="text-4xl md:text-5xl lg:text-7xl font-bold text-white mb-6 text-balance">
+              {" "}
+              {/* Added text-balance */}
               Exterior Cleaning
               <span className="block leading-relaxed text-transparent bg-clip-text bg-gradient-to-r from-cyan-400 to-teal-400">
                 Excellence
-              </span> {/* Changed text from "Reimagined" to "Excellence" */}
+              </span>{" "}
+              {/* Changed text from "Reimagined" to "Excellence" */}
             </h1>
-           <p className="text-base lg:text-lg text-slate-300 max-w-lg">
-  Unlock the true potential of your property with our premium pressure washing, window, gutter, roof soft washing, and driveway cleaning services.
-</p>
+            <p className="text-base lg:text-lg text-slate-300 max-w-lg">
+              Unlock the true potential of your property with our premium
+              pressure washing, window, gutter, roof soft washing, and driveway
+              cleaning services.
+            </p>
           </motion.div>
 
           {/* Right: Features */}
@@ -283,11 +289,23 @@ export default function HeroSection() {
                 </Select>
               </div>
 
+             
               <Button
                 type="submit"
-                className="w-full bg-gradient-to-r rounded-none from-hy-accent-primary to-hy-accent-secondary text-white"
+                disabled={isSubmitting}
+                className="w-full bg-hy-accent-primary hover:bg-hy-accent-secondary text-white font-semibold py-3 px-6 rounded-lg transition-all duration-300 transform hover:scale-[1.02] hover:shadow-lg disabled:transform-none disabled:hover:bg-hy-accent-primary group"
               >
-                Get Your Free Quote <ArrowRight className="ml-2 w-4 h-4" /> {/* Slightly reworded button text */}
+                {isSubmitting ? (
+                  <div className="flex items-center gap-3">
+                    <div className="w-5 h-5 border-2 border-white/30 border-t-white rounded-full animate-spin" />
+                    Sending Message...
+                  </div>
+                ) : (
+                  <div className="flex items-center gap-3">
+                    Submit Now
+                    <ArrowRight className="w-5 h-5 transition-transform duration-300 group-hover:translate-x-1" />
+                  </div>
+                )}
               </Button>
             </form>
           </CardContent>

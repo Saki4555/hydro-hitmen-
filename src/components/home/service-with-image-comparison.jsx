@@ -14,23 +14,33 @@ export function ServiceWithImageComparisonCard({
   imageRight,
   url,
 }) {
+  if (!imageLeft || !imageRight || !title || !url) return null;
   return (
     <div className="rounded-none overflow-hidden shadow-md shadow-hy-accent-secondary/20 bg-white dark:bg-zinc-900 border border-zinc-200 dark:border-zinc-800 p-4">
       <ImageComparison className="w-full h-64 border-b rounded-lg  border-zinc-200 dark:border-zinc-800">
         <ImageComparisonImage
           src={imageLeft}
-          alt={`${title} dark`}
+          alt={`${title} Before`}
           position="left"
         />
 
         <ImageComparisonImage
           src={imageRight}
-          alt={`${title} light`}
+          alt={`${title} After`}
           position="right"
         />
 
-        <ImageComparisonSlider className="w-2 bg-hy-accent-secondary/60  backdrop-blur-xs transition-colors hover:bg-hy-accent-secondary">
-          <div className="absolute left-1/2 top-1/2 h-8 w-6 -translate-x-1/2 -translate-y-1/2 rounded-[4px] bg-hy-accent-primary/80" />
+        <ImageComparisonSlider className="w-2 isolate bg-hy-accent-secondary/60 backdrop-blur-xs transition-colors hover:bg-hy-accent-secondary">
+          {/* BEFORE label on the left */}
+          <div className="absolute left-3 top-1/2 z-20 -translate-y-1/2 bg-hy-accent-primary/80 text-white text-sm font-medium px-3 py-1 rounded-md shadow-sm">
+            After
+          </div>
+          <div className="absolute z-10  left-0 top-1/2 -translate-y-1/2 bg-hy-accent-primary/70 text-white text-sm font-medium px-2 py-2  shadow-sm"></div>
+          <div className="absolute z-10  right-0 top-1/2 -translate-y-1/2 bg-hy-accent-primary/70 text-white text-sm font-medium px-2 py-2  shadow-sm"></div>
+          {/* AFTER label on the right */}
+          <div className="absolute right-3 top-1/2 z-20 -translate-y-1/2 bg-hy-accent-primary/80 text-white text-sm font-medium px-3 py-1 rounded-md shadow-sm">
+            Before
+          </div>
         </ImageComparisonSlider>
       </ImageComparison>
 
@@ -38,11 +48,9 @@ export function ServiceWithImageComparisonCard({
         <div className="absolute top-0 left-1/2 w-16 h-px bg-gradient-to-r from-transparent via-hy-accent-primary/40 to-transparent -translate-x-1/2"></div>
 
         <div className="relative z-10">
-        
-            <h3 className="text-2xl uppercase mb-3 font-mono  font-semibold bg-gradient-to-r from-hy-accent-primary via-hy-accent-primary/60 to-hy-accent-secondary bg-clip-text text-transparent ">
-              {title}
-            </h3>
-        
+          <h3 className="text-2xl uppercase mb-3 font-mono  font-semibold bg-gradient-to-r from-hy-accent-primary via-hy-accent-primary/60 to-hy-accent-secondary bg-clip-text text-transparent ">
+            {title}
+          </h3>
 
           <Button className="group  relative inline-flex items-center justify-center overflow-hidden rounded-md bg-gray-800 px-10 py-3 tracking-tighter text-white">
             <span className="absolute h-0 w-0 rounded-full bg-hy-accent-primary transition-all duration-500 ease-out group-hover:h-56 group-hover:w-56"></span>

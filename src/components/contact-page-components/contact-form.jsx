@@ -28,7 +28,7 @@ export default function ContactForm() {
     e.preventDefault();
     setIsSubmitting(true);
 
-    await new Promise(resolve => setTimeout(resolve, 2000));
+   
     console.log("Form submitted:", formData);
 
     setIsSubmitting(false);
