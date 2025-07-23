@@ -1,5 +1,3 @@
-
-
 import * as motion from "motion/react-client";
 import { SectionContainer } from "../section-container";
 import BadgeAndHeading from "../shared/badge-heading";
@@ -17,8 +15,8 @@ export default function ServicesWeAreOffering() {
     <div className="py-16 bg-hy-bg-primary overflow-hidden">
       <SectionContainer>
         <BadgeAndHeading
-          heading="Services We&rsquo;re Offering"
-          badgeText="A Little Introduction"
+          heading="Our Comprehensive Exterior Cleaning Services" // Updated heading
+          badgeText="Our Services" // Updated badge text
         />
 
         <div className="grid grid-cols-1 md:grid-cols-2 gap-5">
@@ -55,6 +53,14 @@ export default function ServicesWeAreOffering() {
               imageLeft="https://images.unsplash.com/photo-1558618666-fcd25c85cd64?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80"
               imageRight="https://images.unsplash.com/photo-1581578731548-c64695cc6952?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&q=80"
               url="/services/roof-soft-wash"
+            />
+          </motion.div>
+          <motion.div {...itemAnimation}>
+            <ServiceWithImageComparisonCard
+              title="Driveway Cleaning"
+              imageLeft="https://images.unsplash.com/photo-1558618666-fcd25c85cd64?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80"
+              imageRight="https://images.unsplash.com/photo-1581578731548-c64695cc6952?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&q=80"
+              url="/services/driveway-cleaning"
             />
           </motion.div>
         </div>

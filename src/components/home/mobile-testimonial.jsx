@@ -33,7 +33,7 @@ const MobileTestimonial = () => {
       whileInView={{ opacity: 1, y: 0 }}
       transition={{ duration: 0.6, ease: "easeOut" }}
       viewport={{ once: true, amount: 0.2 }}
-      className="bg-bg-primary py-16 lg:hidden"
+      className="bg-bg-primary py-16 lg:hidden overflow-hidden"
     >
       <SectionContainer>
         <div className="relative testimonial-slider">

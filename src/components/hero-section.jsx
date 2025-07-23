@@ -1,7 +1,7 @@
 "use client";
 
 import React, { useState } from "react";
-import { motion } from "motion/react";
+import { motion } from "motion/react"; 
 import { Input } from "@/components/ui/input";
 import { Button } from "@/components/ui/button";
 import {
@@ -12,6 +12,7 @@ import {
   SelectValue,
 } from "@/components/ui/select";
 import { Card, CardContent } from "@/components/ui/card";
+import heroBg from '../assets/hero-images/home-hero.webp';
 import {
   Sparkles,
   ArrowRight,
@@ -19,7 +20,9 @@ import {
   Zap,
   ShieldCheck,
   BadgeCheck,
-} from "lucide-react";
+  Award, // Added for new feature
+  Clock // Added for new feature
+} from "lucide-react"; // Imported new icons
 import Image from "next/image";
 
 export default function HeroSection() {
@@ -37,8 +40,17 @@ export default function HeroSection() {
   const handleSubmit = (e) => {
     e.preventDefault();
     console.log("Quote request:", formData);
+    // Here you would typically send this data to an API
+    alert("Quote request submitted! We'll be in touch soon."); // Simple feedback for demo
+    setFormData({ // Optionally reset form after submission
+      fullName: "",
+      email: "",
+      phone: "",
+      serviceType: "",
+    });
   };
 
+  // Framer Motion variants for animations
   const containerVariants = {
     hidden: { opacity: 0 },
     visible: {
@@ -61,38 +73,61 @@ export default function HeroSection() {
     },
   };
 
-  const features = [
-    {
-      icon: <Droplet className="w-4 h-4 text-white" />,
-      title: "Eco-Friendly Solutions",
-      desc: "Safe for your family and environment",
-    },
-    {
-      icon: <Zap className="w-4 h-4 text-white" />,
-      title: "Fast & Efficient",
-      desc: "Professional results in minimal time",
-    },
-    {
-      icon: <ShieldCheck className="w-4 h-4 text-white" />,
-      title: "Fully Insured",
-      desc: "Complete protection and peace of mind",
-    },
-    {
-      icon: <BadgeCheck className="w-4 h-4 text-white" />,
-      title: "Quality Guaranteed",
-      desc: "100% satisfaction or we return",
-    },
-  ];
+ const features = [
+
+    {
+
+      icon: <Droplet className="w-4 h-4 text-white" />,
+
+      title: "Eco-Friendly Solutions",
+
+      desc: "Safe for your family and environment",
+
+    },
+
+    {
+
+      icon: <Zap className="w-4 h-4 text-white" />,
+
+      title: "Fast & Efficient",
+
+      desc: "Professional results in minimal time",
+
+    },
+
+    {
+
+      icon: <ShieldCheck className="w-4 h-4 text-white" />,
+
+      title: "Fully Insured",
+
+      desc: "Complete protection and peace of mind",
+
+    },
+
+    {
+
+      icon: <BadgeCheck className="w-4 h-4 text-white" />,
+
+      title: "Quality Guaranteed",
+
+      desc: "100% satisfaction or we return",
+
+    },
+
+  ];
+
+
 
   return (
-    <section className="relative bg-gradient-to-br min-h-screen from-slate-900 via-slate-800 to-slate-900">
+    <section className="relative pt-16 bg-gradient-to-br min-h-screen from-slate-900 via-slate-800 to-slate-900">
       {/* Background image */}
       <div className="absolute inset-0 z-0">
         <Image
-          src="https://images.unsplash.com/photo-1558618666-fcd25c85cd64?ixlib=rb-4.0.3&auto=format&fit=crop&w=2070&q=80"
+          src={heroBg}
           alt="Background"
           fill
-          className="object-cover"
+          className="object-cover object-center"
           priority
         />
         <div className="absolute inset-0 bg-slate-900/80" />
@@ -101,7 +136,7 @@ export default function HeroSection() {
       {/* Main content */}
       <div className="relative z-10 max-w-7xl mx-auto px-6 pt-32 pb-16">
         <motion.div
-          className="flex flex-col md:flex-row gap-2"
+          className="flex flex-col md:flex-row gap-7 "
           variants={containerVariants}
           initial="hidden"
           animate="visible"
@@ -111,22 +146,22 @@ export default function HeroSection() {
             variants={itemVariants}
             className="flex-1 w-full md:w-3/5"
           >
+            {/* Uncommented and refined this section */}
             <div className="inline-flex items-center gap-2 px-4 py-2 bg-cyan-500/10 border border-cyan-400/20 rounded-full backdrop-blur-sm mb-4">
               <Sparkles className="w-4 h-4 text-cyan-400" />
               <span className="text-cyan-300 font-medium text-sm tracking-wide">
-                Premium Service
+                Your Property, Reimagined
               </span>
             </div>
-            <h1 className="text-4xl  md:text-5xl lg:text-7xl font-bold text-white mb-6">
+            <h1 className="text-4xl md:text-5xl lg:text-7xl font-bold text-white mb-6 text-balance"> {/* Added text-balance */}
               Exterior Cleaning
               <span className="block leading-relaxed text-transparent bg-clip-text bg-gradient-to-r from-cyan-400 to-teal-400">
-                Reimagined
-              </span>
+                Excellence
+              </span> {/* Changed text from "Reimagined" to "Excellence" */}
             </h1>
-            <p className="text-lg lg:text-xl text-slate-300 max-w-lg">
-              Professional pressure washing, window & gutter cleaning for
-              pristine results.
-            </p>
+           <p className="text-base lg:text-lg text-slate-300 max-w-lg">
+  Unlock the true potential of your property with our premium pressure washing, window, gutter, roof soft washing, and driveway cleaning services.
+</p>
           </motion.div>
 
           {/* Right: Features */}
@@ -210,7 +245,7 @@ export default function HeroSection() {
                     handleInputChange("serviceType", value)
                   }
                 >
-                  <SelectTrigger className="w-full   bg-hy-input-bg text-hy-input-text border border-hy-input-border focus-visible:ring-2 data-[placeholder]:text-hy-input-placeholder focus-visible:ring-hy-input-focus-ring">
+                  <SelectTrigger className="w-full  bg-hy-input-bg text-hy-input-text border border-hy-input-border focus-visible:ring-2 data-[placeholder]:text-hy-input-placeholder focus-visible:ring-hy-input-focus-ring">
                     <SelectValue placeholder="Select Service" />
                   </SelectTrigger>
                   <SelectContent className="">
@@ -232,6 +267,18 @@ export default function HeroSection() {
                     >
                       Gutter Cleaning
                     </SelectItem>
+                    <SelectItem // Added Roof Soft Wash
+                      value="roof-soft-wash"
+                      className="focus:bg-hy-accent-primary/10  [&_svg:not([class*='text-'])]:text-hy-accent-primary"
+                    >
+                      Roof Soft Washing
+                    </SelectItem>
+                    <SelectItem // Added Driveway Cleaning
+                      value="driveway-cleaning"
+                      className="focus:bg-hy-accent-primary/10  [&_svg:not([class*='text-'])]:text-hy-accent-primary"
+                    >
+                      Driveway Cleaning
+                    </SelectItem>
                   </SelectContent>
                 </Select>
               </div>
@@ -240,8 +287,7 @@ export default function HeroSection() {
                 type="submit"
                 className="w-full bg-gradient-to-r rounded-none from-hy-accent-primary to-hy-accent-secondary text-white"
               >
-                Get Free Quote
-                <ArrowRight className="ml-2 w-4 h-4" />
+                Get Your Free Quote <ArrowRight className="ml-2 w-4 h-4" /> {/* Slightly reworded button text */}
               </Button>
             </form>
           </CardContent>

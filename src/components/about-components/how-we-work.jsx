@@ -1,6 +1,4 @@
 
-
-import React from "react";
 import * as motion from "motion/react-client";
 import BadgeAndHeading from "../shared/badge-heading";
 import { SectionContainer } from "../section-container";
@@ -8,9 +6,9 @@ import { SectionContainer } from "../section-container";
 const steps = [
   {
     id: "01",
-    title: "Make A Plan",
+    title: "Request a Free Quote", // Changed title
     description:
-      "It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using.",
+      "Easily request a detailed, no-obligation quote for your exterior cleaning needs through our website or by phone.", // Changed description
     icon: (
       <svg
         className="w-8 h-8"
@@ -28,9 +26,9 @@ const steps = [
   },
   {
     id: "02",
-    title: "Set A Date",
+    title: "Schedule Your Service", // Changed title
     description:
-      "It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using.",
+      "Once you approve the quote, we'll work with you to find a convenient date and time for our team to perform the service.", // Changed description
     icon: (
       <svg
         className="w-8 h-8"
@@ -49,9 +47,9 @@ const steps = [
   },
   {
     id: "03",
-    title: "Start Cleaning",
+    title: "Enjoy a Pristine Property", // Changed title
     description:
-      "It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using.",
+      "Our skilled technicians will arrive promptly, execute the cleaning with precision, leaving your exterior spotless and revitalized.", // Changed description
     icon: (
       <svg
         className="w-8 h-8"
@@ -77,7 +75,10 @@ export default function HowWeWork() {
       <div className="bg-hy-accent-secondary/5 absolute -right-20 bottom-20 h-64 w-64 rounded-full blur-3xl" />
       <SectionContainer>
         {/* Header */}
-        <BadgeAndHeading heading="Our Working Process" badgeText="How It Works" />
+        <BadgeAndHeading
+          heading="Our Seamless Process" // Changed heading
+          badgeText="How It Works" // Changed badge text
+        />
 
         {/* Steps */}
         <motion.div

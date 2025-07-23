@@ -1,5 +1,3 @@
-
-
 import {
   IconBuildingSkyscraper,
   IconUserCheck,
@@ -13,23 +11,23 @@ const AboutStatsSection = () => {
   const stats = [
     {
       icon: <IconBuildingSkyscraper className="w-12 h-12 mx-auto mb-4" />,
-      number: "1924",
-      label: "Project Completed",
+      number: "1,500+", 
+      label: "Projects Completed", 
     },
     {
       icon: <IconUserCheck className="w-12 h-12 mx-auto mb-4" />,
-      number: "9025",
-      label: "Satisfied Clients",
+      number: "800+", 
+      label: "Valued Clients", 
     },
     {
       icon: <IconStar className="w-12 h-12 mx-auto mb-4" />,
-      number: "3087",
-      label: "Expert Members",
+      number: "45+", // Updated to a more realistic number for a dedicated team
+      label: "Dedicated Professionals", // Changed for a professional tone
     },
     {
       icon: <IconAward className="w-12 h-12 mx-auto mb-4" />,
-      number: "260",
-      label: "Winning Awards",
+      number: "10+", // Updated to a more realistic and impressive number
+      label: "Awards & Recognitions", // Changed for a professional tone
     },
   ];
 

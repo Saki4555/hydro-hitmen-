@@ -35,12 +35,12 @@ export default function ServiceDescriptionWithQuote({
     <>
       <div className="grid lg:grid-cols-3 gap-8 lg:gap-12 pt-10 items-start">
         {/* Service Description */}
-        <div className="lg:col-span-2 bg-hy-bg-secondary p-7 rounded-lg sm:p-9 border border-hy-border">
+        <div className="lg:col-span-2 relative bg-hy-bg-secondary p-7 overflow-hidden rounded-lg sm:p-9 border border-hy-border">
+          <div className="absolute top-0 left-0 w-full h-0.5 bg-gradient-to-r from-transparent via-hy-accent-primary to-transparent"></div>
           <h2
-            className="text-4xl lg:text-5xl font-bold mb-6"
-            style={{ color: "var(--color-hy-accent-title)" }}
+            className="text-4xl text-cyan-950 lg:text-5xl font-bold mb-6"
           >
-            {title }
+            {title}
           </h2>
           <p className="text-hy-text-secondary text-lg leading-relaxed">
             {description}
@@ -50,12 +50,12 @@ export default function ServiceDescriptionWithQuote({
         {/* Quote Box */}
         <div className="lg:col-span-1 bg-hy-accent-primary p-8 rounded-lg text-white text-center flex flex-col items-center justify-center h-full">
           <QuoteIcon />
-          <p className="text-lg font-semibold opacity-90">Get a Free Quote</p>
+          <p className="text-lg font-semibold opacity-90">Get Your Free Estimate Today!</p> {/* Updated text for clarity */}
           <a
             href={`tel:${phoneNumber?.replace(/\s/g, "")}`}
-            className="text-4xl font-bold tracking-wider mt-1 hover:opacity-80 transition-opacity"
+            className="text-2xl font-bold tracking-wider mt-1 hover:opacity-80 transition-opacity"
           >
-            {phoneNumber || "11111"}
+            {phoneNumber}
           </a>
         </div>
       </div>

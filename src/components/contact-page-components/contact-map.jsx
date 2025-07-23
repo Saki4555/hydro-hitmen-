@@ -83,7 +83,7 @@ export default function MapSection() {
         transition={{ delay: 0.6 }}
         className="mt-6 grid grid-cols-1 sm:grid-cols-2 gap-4"
       >
-        <div className="bg-gray-50 rounded-lg p-4">
+        <div className="bg-hy-bg-secondary rounded-lg p-4 border border-hy-border">
           <h4 className="font-semibold text-gray-900 mb-2">Business Hours</h4>
           <div className="text-sm text-gray-600 space-y-1">
             <p>Monday - Friday: 8:00 AM - 6:00 PM</p>
@@ -91,7 +91,7 @@ export default function MapSection() {
             <p>Sunday: Closed</p>
           </div>
         </div>
-        <div className="bg-gray-50 rounded-lg p-4">
+        <div className="bg-hy-bg-secondary rounded-lg p-4 border border-hy-border">
           <h4 className="font-semibold text-gray-900 mb-2">Service Area</h4>
           <div className="text-sm text-gray-600 space-y-1">
             <p>Camden & Surrounding Areas</p>

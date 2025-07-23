@@ -47,8 +47,8 @@
   /*! --------------- CUSTOM ---------------- */
 
   /* backgrounds */
-  --color-hy-bg-primary: var(--color-white);
-  --color-hy-bg-secondary: var(--color-gray-50);
+  --color-hy-bg-primary: var(--color-gray-50);
+  --color-hy-bg-secondary: var(--color-white);
 
   /* texts */
   --color-hy-text-primary: var(--color-slate-950);
@@ -184,3 +184,6 @@
     @apply bg-background text-foreground;
   }
 }
+
+
+@custom-variant hover (&:hover);

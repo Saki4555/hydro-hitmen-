@@ -26,8 +26,8 @@ export default function ContactInfoCard({
       initial={{ opacity: 0, y: 20 }}
       whileInView={{ opacity: 1, y: 0 }}
       viewport={{once: true, amount: 0.1}}
-      transition={{ delay: index * 2, duration: 0.5 }}
-      whileHover={{ y: -5 }}
+      transition={{ delay: index * 0.4, duration: 0.5 }}
+   
       className="group"
     >
       <Card className="relative overflow-hidden bg-hy-bg-secondary border-t-4 border-t-hy-border-accent shadow-md transition-all duration-300 group">

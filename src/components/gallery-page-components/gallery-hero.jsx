@@ -3,17 +3,17 @@
 import Image from "next/image";
 import Link from "next/link";
 import * as motion from "motion/react-client";
-
+import heroBg from '../../assets/hero-images/others-hero.webp';
 export default function GalleryHero() {
   return (
     <div className="relative h-[60vh] w-full overflow-hidden">
       {/* Background Image */}
       <div className="absolute inset-0 z-0">
         <Image
-          src="https://images.unsplash.com/photo-1558618666-fcd25c85cd64?ixlib=rb-4.0.3&auto=format&fit=crop&w=2070&q=80"
+          src={heroBg}
           alt="Background"
           fill
-          className="object-cover"
+          className="object-cover object-center"
           priority
         />
         <div className="absolute inset-0 bg-slate-900/80" />

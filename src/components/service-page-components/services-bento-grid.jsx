@@ -1,14 +1,10 @@
 import React from "react";
 import { BentoGrid, BentoGridItem } from "../ui/bento-grid";
 
-import {
-  IconWash,
-  IconWind,
-  IconCloudRain,
-  IconHomeShield,
-} from "@tabler/icons-react";
+
 import Image from "next/image";
 import { SectionContainer } from "../section-container";
+import { SERVICES } from "@/constants";
 
 export function ServicesBentoGrid() {
   return (
@@ -23,7 +19,7 @@ export function ServicesBentoGrid() {
      <SectionContainer>
      {" "}
       <BentoGrid className="max-w-5xl mx-auto md:auto-rows-[23rem]">
-        {services.map((service, i) => (
+        {SERVICES.map((service, i) => (
         
            <BentoGridItem
             key={i}
@@ -58,48 +54,7 @@ const ServiceImage = ({ src, alt }) => (
   </div>
 );
 
-export const services = [
-  {
-    name: "Pressure Washing",
-    id: "pressure-washing",
-    description: "High-powered cleaning for driveways, patios, and more.",
-    image:
-      "https://images.unsplash.com/photo-1581578731548-c64695cc6952?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1000&q=80",
-    icon: IconWash,
-    className: "md:col-span-2",
-    url: "/services/pressure-washing",
-  },
-  {
-    name: "Window Cleaning",
-    id: "window-cleaning",
-    description: "Crystal-clear window cleaning for homes and businesses.",
-    image:
-      "https://images.unsplash.com/photo-1581578731548-c64695cc6952?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1000&q=80",
-    icon: IconWind,
-    className: "md:col-span-1",
-    url: "/services/window-cleaning",
-  },
-  {
-    name: "Gutter Cleaning",
-    id: "gutter-cleaning",
-    description: "Prevent water damage with thorough gutter cleaning.",
-    image:
-      "https://images.unsplash.com/photo-1581578731548-c64695cc6952?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1000&q=80",
-    icon: IconCloudRain,
-    className: "md:col-span-1",
-    url: "/services/gutter-cleaning",
-  },
-  {
-    name: "Roof Soft Wash",
-    id: "roof-soft-wash",
-    description: "Gentle yet effective roof cleaning without damage.",
-    image:
-      "https://images.unsplash.com/photo-1581578731548-c64695cc6952?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1000&q=80",
-    icon: IconHomeShield,
-    className: "md:col-span-2",
-    url: "/services/roof-soft-wash",
-  },
-];
+
 
 const BubbleSVG = () => (
   <svg viewBox="0 0 100 100" className="absolute w-24 h-24 top-4 left-4 opacity-10">

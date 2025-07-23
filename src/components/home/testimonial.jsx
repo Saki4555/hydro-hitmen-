@@ -6,6 +6,7 @@ import TestimonialCard from "./testimonial-card";
 import BadgeAndHeading from "../shared/badge-heading";
 import Image from "next/image";
 import * as motion from "motion/react-client";
+import testimonialImage from '../../assets/services-images/driveway-cleaning-1.webp'
 
 export default function Testimonial() {
   return (
@@ -23,9 +24,10 @@ export default function Testimonial() {
           viewport={{ once: true, amount: 0.2 }}
         >
           <div className="relative w-full max-w-[400px] aspect-[3/4] rounded-none shadow-xl overflow-hidden">
+          <div className="absolute inset-0 bg-black/30 z-10"></div>
             <Image
-              src="https://images.unsplash.com/photo-1581578731548-c64695cc6952?q=80&w=2070&auto=format&fit=crop"
-              alt="Testimonial Illustration"
+              src={testimonialImage}
+              alt="Driveway cleaning"
               fill
               className="object-cover"
               priority

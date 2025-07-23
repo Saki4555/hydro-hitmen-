@@ -2,7 +2,8 @@
 import { Menu, X } from "lucide-react";
 import { usePathname } from "next/navigation";
 import { useEffect, useState } from "react";
-// import Logo from '../assets/logos/logo.jpg';
+import Logo from '../../assets/logo/logo.jpg';
+import Image from "next/image";
 
 const navItems = [
   {
@@ -83,12 +84,13 @@ const Navbar = () => {
             className="animate-fade-up relative flex items-center gap-3 transition-all duration-300 md:static"
           >
             {/* logo */}
-            <div className="flex items-center gap-3">
-              {/* <img
+            <div className="flex h-11 w-11 relative overflow-hidden items-center gap-3">
+              <Image
                 src={Logo}
-                className="h-11 w-11 rounded-full border-2 border-white"
+                className=" rounded-full border-2 border-white"
+                fill
                 alt="Logo"
-              /> */}
+              />
             </div>
             <span className="text-white uppercase font-semibold text-lg tracking-wider">
               HydroHitmen

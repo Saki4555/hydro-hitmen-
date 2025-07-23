@@ -48,7 +48,7 @@ export default function WhyChooseUs() {
                 >
                   <Sparkles className="w-4 h-4 text-cyan-500" />
                   <span className="font-medium uppercase text-xs tracking-wide">
-                    Why Choose HydroHitmen
+                    Why Choose Hydro Hitmen
                   </span>
                 </motion.div>
 
@@ -59,22 +59,22 @@ export default function WhyChooseUs() {
                   transition={{ duration: 0.7, delay: 0.2 }}
                   viewport={{ once: true, amount: 0.1 }}
                 >
-                  Why will You Choose Our Services?
+                  Experience the Difference with Our Exterior Cleaning Expertise
                 </motion.h2>
                 <p className="text-cyan-100 mb-10 max-w-md">
-                  Our business is committed to making your life easier by
-                  offering laundry pick-up.
+                  We are committed to delivering exceptional results, protecting your property, and ensuring your complete satisfaction with every service.
                 </p>
               </motion.div>
 
               <div className="space-y-8">
-                <Feature title="Toxin-free Cleaning Supplies">
-                  We use eco-friendly liquid castile soap diluted that is toxic
-                  free and makes your clothes shine.
+                <Feature title="Eco-Friendly & Safe Solutions">
+                  We utilize advanced, environmentally conscious cleaning agents and methods that are tough on grime but gentle on your home and landscaping.
                 </Feature>
-                <Feature title="Energy Efficient Equipment">
-                  We also use energy efficient equipment that is suitable for
-                  our neighbourhood and environment.
+                <Feature title="State-of-the-Art Equipment">
+                  Our investment in the latest professional-grade pressure washing and soft washing equipment ensures superior cleaning efficiency and results.
+                </Feature>
+                <Feature title="Trained & Insured Professionals">
+                  Our experienced team is fully trained in best practices and backed by comprehensive insurance for your peace of mind.
                 </Feature>
               </div>
             </div>
@@ -89,8 +89,8 @@ export default function WhyChooseUs() {
             viewport={{ once: true, amount: 0.2 }}
           >
             <Image
-              src="https://images.unsplash.com/photo-1581578731548-c64695cc6952?q=80&w=2070&auto=format&fit=crop"
-              alt="Woman cleaning a kitchen cabinet"
+              src="https://images.unsplash.com/photo-1558618666-fcd25c85cd64?q=80&w=2070&auto=format&fit=crop" // Changed image to one more relevant to exterior washing
+              alt="Professional pressure washing a home's siding" // Updated alt text
               fill
               className="object-cover group-hover:scale-105 transform transition-transform duration-500"
             />
@@ -98,12 +98,12 @@ export default function WhyChooseUs() {
               <div className="flex flex-col sm:flex-row gap-4 max-w-3xl">
                 <div className="bg-hy-accent-secondary text-white p-6 flex-1 min-h-[120px] flex flex-col justify-center">
                   <h3 className="text-xl font-bold">
-                    Your Safety is Our First Priority
+                    Quality Results, Every Time
                   </h3>
                 </div>
                 <div className="bg-hy-accent-primary text-white p-6 flex-1 min-h-[120px] flex flex-col justify-center">
                   <h3 className="text-xl font-bold">
-                    Done Right From Start to Finish
+                    Your Property&apos;s Best Look
                   </h3>
                 </div>
               </div>

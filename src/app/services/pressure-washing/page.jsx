@@ -1,11 +1,12 @@
+import { PRESSURE_WASHING_DATA } from "@/constants";
 import SingleServiceDetailsPage from "@/pages/single-service-details-page";
 
-import React from "react";
+
 
 const PressureWashingPage = () => {
   return (
     <>
-     <SingleServiceDetailsPage activeService="pressure-washing"/>
+     <SingleServiceDetailsPage activeService="pressure-washing" serviceData={PRESSURE_WASHING_DATA}/>
       
     </>
   );

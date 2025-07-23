@@ -7,6 +7,7 @@ const services = [
   { name: "Window cleaning", id: "window-cleaning" },
   { name: "Gutter Cleaning", id: "gutter-cleaning" },
   { name: "Roof Soft Wash", id: "roof-soft-wash" },
+  { name: "Driveway Cleaning", id: "driveway-cleaning" },
 ];
 
 const ImageWithCategory = ({ activeService }) => {
